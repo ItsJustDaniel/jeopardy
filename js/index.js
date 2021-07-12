@@ -25,10 +25,12 @@ let computer2Score = document.getElementById("jeopardy__compScore2");
 console.log(questionBtn);
 
 //active questions
-let activeQuestions = [
-  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-  22, 23, 24,
-];
+// let activeQuestions = [
+//   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+//   22, 23, 24,
+// ];
+
+let activeQuestions = [0, 1, 2];
 
 console.log(questions);
 
@@ -232,7 +234,9 @@ modal__button__submit.onclick = (e) => {
     modal__answer.innerHTML = "";
   }, 1500);
   setTimeout(() => {
-    AI1();
+    if (activeQuestions.length >= 1) {
+      AI1();
+    }
   }, 2000);
 };
 
@@ -279,15 +283,18 @@ const AI1 = () => {
   }
   activeQuestions.splice(randomQuestion, 1);
 
+  console.log(activeQuestions);
   setTimeout(() => {
-    AI2();
+    if (activeQuestions.length >= 1) {
+      AI2();
+    }
     if (activeQuestions.length === 0) {
-      isDouble = true;
-      isFinal = true;
-
-      modal__title__double = "Final Jeopardy!";
-
       setTimeout(() => {
+        isDouble = true;
+        isFinal = true;
+
+        modal__title__double.innerHTML = "Final Jeopardy!";
+
         modal__double.style.display = "block";
         modal.style.display = "none";
         finalJeopardy();
@@ -316,13 +323,14 @@ const AI2 = () => {
 
   activeQuestions.splice(randomQuestion, 1);
 
+  console.log(activeQuestions);
   if (activeQuestions.length === 0) {
-    isDouble = true;
-    isFinal = true;
-
-    modal__title__double = "Final Jeopardy!";
-
     setTimeout(() => {
+      isDouble = true;
+      isFinal = true;
+
+      modal__title__double.innerHTML = "Final Jeopardy!";
+
       modal__double.style.display = "block";
       modal.style.display = "none";
       finalJeopardy();
