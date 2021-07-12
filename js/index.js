@@ -16,6 +16,13 @@ let computer1Score = document.getElementById("jeopardy__compScore1");
 let computer2Score = document.getElementById("jeopardy__compScore2");
 
 console.log(questionBtn);
+
+//active questions
+let activeQuestions = [
+  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+  22, 23, 24,
+];
+
 //how many questions there are still active
 let totalQuestions = 25;
 let currentQuestion = "";
@@ -125,36 +132,44 @@ window.onclick = function (event) {
 
 //Ai's turn
 const AI1 = () => {
-  const randomQuestion = Math.floor(Math.random() * 25);
+  console.log(activeQuestions);
+  const randomQuestion = Math.floor(Math.random() * activeQuestions.length - 1);
   const isWon = Math.floor(Math.random() * 2);
-  questionBtn[randomQuestion].style.visibility = "hidden";
+  questionBtn[activeQuestions[randomQuestion]].style.visibility = "hidden";
   const num = parseInt(
-    questionBtn[randomQuestion].innerHTML.replace(/[^0-9]/, "")
+    questionBtn[activeQuestions[randomQuestion]].innerHTML.replace(
+      /[^0-9]/g,
+      ""
+    )
   );
-  console.log(num);
-  console.log(questionBtn[randomQuestion].innerHTML);
+
   if (isWon === 1) {
     computer1Score.innerHTML = parseInt(computer1Score.innerText) + num;
   } else {
     computer1Score.innerHTML = parseInt(computer1Score.innerText) - num;
   }
+  activeQuestions.splice(activeQuestions[randomQuestion] - 1, 1);
   setTimeout(() => {
     AI2();
   }, 1000);
 };
 
 const AI2 = () => {
-  const randomQuestion = Math.floor(Math.random() * 25);
+  console.log(activeQuestions);
+  const randomQuestion = Math.floor(Math.random() * activeQuestions.length);
   const isWon = Math.floor(Math.random() * 2);
-  questionBtn[randomQuestion].style.visibility = "hidden";
+  questionBtn[activeQuestions[randomQuestion]].style.visibility = "hidden";
   const num = parseInt(
-    questionBtn[randomQuestion].innerHTML.replace(/[^0-9]/, "").trim()
+    questionBtn[activeQuestions[randomQuestion]].innerHTML
+      .replace(/[^0-9]/g, "")
+      .trim()
   );
   console.log(num);
-  console.log(questionBtn[randomQuestion].innerHTML);
   if (isWon === 1) {
     computer2Score.innerHTML = parseInt(computer2Score.innerText) + num;
   } else {
     computer2Score.innerHTML = parseInt(computer2Score.innerText) - num;
   }
+
+  activeQuestions.splice(activeQuestions[randomQuestion] - 1, 1);
 };
