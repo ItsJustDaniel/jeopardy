@@ -1,3 +1,3 @@
 const onQuestionClick = () => {
-  console.log("click");
+  location.href = "question";
 };
