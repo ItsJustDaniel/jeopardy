@@ -27,6 +27,10 @@ body {
   width: 300px;
 }
 
+.jeopardy__score__text {
+  margin: 0.5rem;
+}
+
 table {
   border-collapse: collapse;
   margin: auto;
@@ -42,7 +46,7 @@ th {
   font-size: 1rem;
 }
 
-.jeopady__button {
+.jeopardy__button {
   height: 100%;
   width: 100%;
   border: none;
@@ -58,17 +62,18 @@ th {
   text-align: center;
   font-size: 3rem;
   color: gold;
+  margin: 0.5rem;
 }
 
-.jeopady__button:hover {
+.jeopardy__button:hover {
   background-color: blue;
 }
 
-.jeopady__question {
+.jeopardy__question {
   padding: 0;
 }
 
-.jeopady__topic {
+.jeopardy__topic {
   color: white;
   text-align: center;
   font-size: 2rem;
