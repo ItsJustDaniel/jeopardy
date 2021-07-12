@@ -7,7 +7,7 @@
 function getCategories() {
   const random = Math.floor(Math.random() * 1000);
 
-  let url = `https://peaceful-sea-07744.herokuapp.com/https://jservice.io/api/categories?count=5`;
+  let url = `https://jservice.io/api/categories?count=5`;
   return fetch(url)
     .then((response) => {
       return response.json();
@@ -65,6 +65,26 @@ function getClue(value, category, offset) {
       return data;
     });
 }
+
+const finalQuestion = {
+  id: 52263,
+  answer: "illusionist",
+  question: "Another name for a magician",
+  value: 1000,
+  airdate: "2003-05-30T12:00:00.000Z",
+  created_at: "2014-02-11T23:17:58.718Z",
+  updated_at: "2014-02-11T23:17:58.718Z",
+  category_id: 4568,
+  game_id: null,
+  invalid_count: null,
+  category: {
+    id: 4568,
+    title: 'feeling "ill"',
+    created_at: "2014-02-11T23:08:34.914Z",
+    updated_at: "2014-02-11T23:08:34.914Z",
+    clues_count: 10,
+  },
+};
 
 const question1 = [
   {

@@ -213,3 +213,12 @@ th {
   text-decoration: none;
   cursor: pointer;
 }
+
+.ending__screen {
+  position: fixed;
+  color: white;
+  font-size: 5rem;
+  top: 30%;
+  left: 30%;
+  transform: translateZ(10px);
+}
