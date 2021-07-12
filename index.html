@@ -1,128 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1 class="jeopardy__title">Jeopady!</h1>
-    <div class="jeopardy__scores">
-      <div class="jeopardy__score jeopardy_user">
-        <h1 class="jeopardy__score__text">User</h1>
-        <h1 class="jeopardy__score__text">Score</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h1 class="jeopardy__title">Jeopady!</h1>
+  <div class="jeopardy__scores">
+    <div class="jeopardy__score jeopardy_user">
+      <h1 class="jeopardy__score__text">User</h1>
+      <h1 class="jeopardy__score__text">Score</h1>
+    </div>
+    <div class="jeopardy__score jeopardy_ai">
+      <h1 class="jeopardy__score__text">Ai</h1>
+      <h1 class="jeopardy__score__text">Score</h1>
+    </div>
+    <div class="jeopardy__score jeopardy_ai">
+      <h1 class="jeopardy__score__text">Ai</h1>
+      <h1 class="jeopardy__score__text">Score</h1>
+    </div>
+  </div>
+  <table class="jeopardy__board">
+    <thead>
+      <tr class="jeopardy__row">
+        <th class="jeopardy__topic jeopardy__card">Topic 1</th>
+        <th class="jeopardy__topic jeopardy__card">Topic 1</th>
+        <th class="jeopardy__topic jeopardy__card">Topic 1</th>
+        <th class="jeopardy__topic jeopardy__card">Topic 1</th>
+        <th class="jeopardy__topic jeopardy__card">Topic 1</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="jeopardy__row">
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button" id="topic1-100">
+            $100
+          </button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$100</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$100</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$100</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$100</button>
+        </td>
+      </tr>
+      <tr class="jeopardy__row">
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$200</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$200</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$200</button>
+        </td>
+        <td class="jeopardy__question jeoprdy__card">
+          <button class="jeopardy__button button">$200</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$200</button>
+        </td>
+      </tr>
+      <tr class="jeopardy__row">
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$300</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$300</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$300</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$300</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$300</button>
+        </td>
+      </tr>
+      <tr class="jeopardy__row">
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$400</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$400</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$400</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$400</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$400</button>
+        </td>
+      </tr>
+      <tr class="jeopardy__row">
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$500</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$500</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$500</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$500</button>
+        </td>
+        <td class="jeopardy__question jeopardy__card">
+          <button class="jeopardy__button button">$500</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="main">
+    <div class="main__Header">
+      <h2>Topic 1 - $100 Question</h2>
+    </div>
+
+    <div class="main__Body">
+      <h2>Type question here</h2>
+    </div>
+
+    <div class="mainFooter">
+      <button id="ansBtn">Click to see answer</button>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="main__Header">
+        <h2>Topic 1 - $100 Answer</h2>
       </div>
-      <div class="jeopardy__score jeopardy_ai">
-        <h1 class="jeopardy__score__text">Ai</h1>
-        <h1 class="jeopardy__score__text">Score</h1>
+
+      <div class="main__Body">
+        <h2>Type answer here</h2>
       </div>
-      <div class="jeopardy__score jeopardy_ai">
-        <h1 class="jeopardy__score__text">Ai</h1>
-        <h1 class="jeopardy__score__text">Score</h1>
+
+      <div class="mainFooter">
+        <button>Click to return to Jeopardy Board</button>
       </div>
     </div>
-    <table class="jeopardy__board">
-      <thead>
-        <tr class="jeopardy__row">
-          <th class="jeopardy__topic jeopardy__card">Topic 1</th>
-          <th class="jeopardy__topic jeopardy__card">Topic 1</th>
-          <th class="jeopardy__topic jeopardy__card">Topic 1</th>
-          <th class="jeopardy__topic jeopardy__card">Topic 1</th>
-          <th class="jeopardy__topic jeopardy__card">Topic 1</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="jeopardy__row">
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button" id="topic1-100">
-              $100
-            </button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$100</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$100</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$100</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$100</button>
-          </td>
-        </tr>
-        <tr class="jeopardy__row">
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$200</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$200</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$200</button>
-          </td>
-          <td class="jeopardy__question jeoprdy__card">
-            <button class="jeopardy__button button">$200</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$200</button>
-          </td>
-        </tr>
-        <tr class="jeopardy__row">
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$300</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$300</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$300</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$300</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$300</button>
-          </td>
-        </tr>
-        <tr class="jeopardy__row">
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$400</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$400</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$400</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$400</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$400</button>
-          </td>
-        </tr>
-        <tr class="jeopardy__row">
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$500</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$500</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$500</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$500</button>
-          </td>
-          <td class="jeopardy__question jeopardy__card">
-            <button class="jeopardy__button button">$500</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <script type="module" src="js/index.js"></script>
-  </body>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="module" src="js/index.js"></script>
+</body>
+
 </html>
