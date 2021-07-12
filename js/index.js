@@ -134,10 +134,9 @@ modal__button__submit.onclick = (e) => {
 
 //Ai's turn
 const AI1 = () => {
-  const randomQuestion = Math.floor(
-    Math.random() * (activeQuestions.length + 1)
-  );
+  const randomQuestion = Math.floor(Math.random() * activeQuestions.length);
   const isWon = Math.floor(Math.random() * 2);
+  console.log(questionBtn[activeQuestions[randomQuestion]]);
   questionBtn[activeQuestions[randomQuestion]].style.visibility = "hidden";
   const num = parseInt(
     questionBtn[activeQuestions[randomQuestion]].innerHTML.replace(
@@ -166,6 +165,7 @@ const AI2 = () => {
     Math.random() * (activeQuestions.length + 1)
   );
   const isWon = Math.floor(Math.random() * 2);
+  console.log(questionBtn[activeQuestions[randomQuestion]]);
   questionBtn[activeQuestions[randomQuestion]].style.visibility = "hidden";
   const num = parseInt(
     questionBtn[activeQuestions[randomQuestion]].innerHTML
