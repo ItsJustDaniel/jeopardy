@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+
 html,
 body {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   margin: 0;
   padding: 0%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #00008b;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, */
+    /* Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
+  font-family: 'Otomanopee One', sans-serif;
+  background-color: #1c1a2b;
+  overflow-x: hidden;
 }
 
 .jeopardy__scores {
@@ -15,7 +19,9 @@ body {
   margin: auto;
   justify-content: space-around;
   color: white;
-  width: 50%;
+  width: 60%;
+  margin-bottom: 1.4rem;
+  margin-top: 1.3rem;
 }
 .jeopardy__score {
   display: flex;
@@ -23,9 +29,25 @@ body {
   align-items: center;
   margin: 1rem;
   color: white;
-  background-color: purple;
-  width: 300px;
+  background-color: #252d3e;
+  width: 20vw;
+  border-radius: 0.6rem;
+  box-shadow: 0rem 0.2rem 1rem 0 #303030da, 0rem -0.2rem 0.5rem 0 #303030da;
+  /* border: 0.1rem solid #d7c458; */
+  position: relative;
+  /* z-index: 3; */
 }
+/* .jeopardy__score::before{
+  content: "";
+  background: conic-gradient(
+    #d7c458 20deg,
+    transparent 120deg
+  );
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  z-index: 1;
+} */
 
 .jeopardy__score__text {
   margin: 0.5rem;
@@ -53,7 +75,8 @@ th {
   margin: 0%;
   padding: 0%;
   background-color: #00008b;
-  color: gold;
+  color: #d7c458;
+  font-family: inherit;
   font-size: 2rem;
   cursor: pointer;
 }
@@ -61,7 +84,7 @@ th {
 .jeopardy__title {
   text-align: center;
   font-size: 3rem;
-  color: gold;
+  color: #d7c458;
   margin: 0.5rem;
 }
 
@@ -77,6 +100,32 @@ th {
   color: white;
   text-align: center;
   font-size: 2rem;
+  background: #a7a1c4;
+}
+
+.jeopardy__user__avatar{
+  height: 5.6rem;
+  margin: 0.8rem 2rem;
+}
+
+.jeopardy__board{
+  margin-bottom: 3rem;
+}
+
+.footer{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .footer__text{
+  color: #d7c458;
+}
+
+.jeopardy__user__name{
+  color: #d7c458;
+  margin: 0 0.2rem;;
 }
 
 
