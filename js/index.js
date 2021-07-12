@@ -99,7 +99,9 @@ modal__button__pass.onclick = () => {
   currentQuestion.target.style.visibility = "hidden";
   currentQuestion = "";
   input.value = "";
-  AI1();
+  setTimeout(() => {
+    AI1();
+  }, 1000);
 };
 
 //when user submits their answer
