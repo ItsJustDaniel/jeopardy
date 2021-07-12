@@ -59,6 +59,7 @@ table {
   margin: auto;
   width: 800px;
   height: 600px;
+  background-color: #00008b;
 }
 
 td,
@@ -195,6 +196,8 @@ th {
   color: #d7c458;
   border: none;
   outline: none;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .close {
