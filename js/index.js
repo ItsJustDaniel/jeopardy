@@ -15,6 +15,7 @@ let userScore = document.getElementById("jeopardy__userScore");
 let computer1Score = document.getElementById("jeopardy__compScore1");
 let computer2Score = document.getElementById("jeopardy__compScore2");
 
+console.log(questionBtn);
 //how many questions there are still active
 let totalQuestions = 25;
 let currentQuestion = "";
@@ -86,6 +87,7 @@ questionBtn.forEach(
 //when user passes the question
 modal__button__pass.onclick = () => {
   modal.style.display = "none";
+  currentQuestion.target.style.visibility = "hidden";
   currentQuestion = "";
   input.value = "";
 };
@@ -106,7 +108,11 @@ modal__button__submit.onclick = (e) => {
     currentQuestion = "";
     input.value = "";
     modal.style.display = "none";
+    modal__answer.innerHTML = "";
   }, 1500);
+  setTimeout(() => {
+    AI1();
+  }, 2500);
 };
 
 // When the user clicks anywhere outside of the modal, close it
@@ -114,5 +120,41 @@ window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
     currentQuestion = "";
+  }
+};
+
+//Ai's turn
+const AI1 = () => {
+  const randomQuestion = Math.floor(Math.random() * 25);
+  const isWon = Math.floor(Math.random() * 2);
+  questionBtn[randomQuestion].style.visibility = "hidden";
+  const num = parseInt(
+    questionBtn[randomQuestion].innerHTML.replace(/[^0-9]/, "")
+  );
+  console.log(num);
+  console.log(questionBtn[randomQuestion].innerHTML);
+  if (isWon === 1) {
+    computer1Score.innerHTML = parseInt(computer1Score.innerText) + num;
+  } else {
+    computer1Score.innerHTML = parseInt(computer1Score.innerText) - num;
+  }
+  setTimeout(() => {
+    AI2();
+  }, 1000);
+};
+
+const AI2 = () => {
+  const randomQuestion = Math.floor(Math.random() * 25);
+  const isWon = Math.floor(Math.random() * 2);
+  questionBtn[randomQuestion].style.visibility = "hidden";
+  const num = parseInt(
+    questionBtn[randomQuestion].innerHTML.replace(/[^0-9]/, "").trim()
+  );
+  console.log(num);
+  console.log(questionBtn[randomQuestion].innerHTML);
+  if (isWon === 1) {
+    computer2Score.innerHTML = parseInt(computer2Score.innerText) + num;
+  } else {
+    computer2Score.innerHTML = parseInt(computer2Score.innerText) - num;
   }
 };
