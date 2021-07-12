@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap");
 
 html,
 body {
@@ -7,8 +7,8 @@ body {
   margin: 0;
   padding: 0%;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, */
-    /* Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
-  font-family: 'Otomanopee One', sans-serif;
+  /* Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
+  font-family: "Otomanopee One", sans-serif;
   background-color: #1c1a2b;
   overflow-x: hidden;
 }
@@ -32,6 +32,7 @@ body {
   background-color: #252d3e;
   width: 20vw;
   border-radius: 0.6rem;
+  justify-content: space-between;
   box-shadow: 0rem 0.2rem 1rem 0 #303030da, 0rem -0.2rem 0.5rem 0 #303030da;
   /* border: 0.1rem solid #d7c458; */
   position: relative;
@@ -103,77 +104,97 @@ th {
   background: #a7a1c4;
 }
 
-.jeopardy__user__avatar{
+.jeopardy__user__avatar {
   height: 5.6rem;
   margin: 0.8rem 2rem;
 }
 
-.jeopardy__board{
+.jeopardy__board {
   margin-bottom: 3rem;
 }
 
-.footer{
+.footer {
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.footer .footer__text{
+.footer .footer__text {
   color: #d7c458;
 }
 
-.jeopardy__user__name{
+.jeopardy__user__name {
   color: #d7c458;
-  margin: 0 0.2rem;;
+  margin: 0 0.2rem;
+  text-align: center;
 }
 
-
-.main{
+.main {
   border: 3px solid;
   /* display: flex;  */
 }
 
-.main__Header{
+.modal__Header {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-} 
-
-.main__Body{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 
-.mainFooter{
-   display: flex;
+.modal__Body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+}
+
+.mainFooter {
+  display: flex;
   justify-content: flex-end;
   text-align: center;
 }
 
-
 /* The Modal (background) */
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; 
+  background-color: #00008b;
+  margin: auto;
+  margin-top: 10%;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 600px;
+  height: 400px;
+  color: #d7c458;
+}
+
+.modal__input {
+  padding: 0.75rem;
+  margin: 0.75rem;
+  border-radius: 25px;
+  outline: none;
+}
+
+.modal__button {
+  margin: 0.75rem;
+  padding: 0.75rem;
+  background-color: #1c1a2b;
+  color: #d7c458;
+  border: none;
+  outline: none;
 }
 
 .close {
@@ -189,5 +210,3 @@ th {
   text-decoration: none;
   cursor: pointer;
 }
-
-
