@@ -9,6 +9,7 @@ const modal__button__submit = document.getElementById("modal__button__submit");
 const modal__button__pass = document.getElementById("modal__button__pass");
 const input = document.getElementById("modal__input");
 const questionShown = document.getElementById("modal__question");
+const answer = document.getElementById("modal__answer");
 // scores
 let userScore = document.getElementById("jeopardy__userScore");
 let computer1Score = document.getElementById("jeopardy__compScore1");
@@ -98,10 +99,14 @@ modal__button__submit.onclick = (e) => {
     userScore.innerHTML = parseInt(userScore.innerText) + num;
   } else {
     userScore.innerHTML = parseInt(userScore.innerText) - num;
+    modal__answer.innerHTML = questions[questionIndex1][questionIndex2].answer;
   }
-  currentQuestion.target.style.visibility = "hidden";
-  currentQuestion = "";
-  modal.style.display = "none";
+  setTimeout(() => {
+    currentQuestion.target.style.visibility = "hidden";
+    currentQuestion = "";
+    input.value = "";
+    modal.style.display = "none";
+  }, 1500);
 };
 
 // When the user clicks anywhere outside of the modal, close it

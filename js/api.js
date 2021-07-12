@@ -475,25 +475,6 @@ question4 = [
 
 const question5 = [
   {
-    id: 20069,
-    answer: "rib",
-    question: "",
-    value: null,
-    airdate: "1996-11-15T12:00:00.000Z",
-    created_at: "2014-02-11T22:57:46.201Z",
-    updated_at: "2014-02-11T22:57:46.201Z",
-    category_id: 1600,
-    game_id: null,
-    invalid_count: null,
-    category: {
-      id: 1600,
-      title: "historic americans",
-      created_at: "2014-02-11T22:55:03.192Z",
-      updated_at: "2014-02-11T22:55:03.192Z",
-      clues_count: 60,
-    },
-  },
-  {
     id: 15188,
     answer: "Robert E. Lee",
     question:
