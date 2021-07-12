@@ -279,21 +279,20 @@ const AI1 = () => {
   }
   activeQuestions.splice(randomQuestion, 1);
 
-  if (activeQuestions.length === 0) {
-    isDouble = true;
-    isFinal = true;
-
-    modal__title__double = "Final Jeopardy!";
-
-    setTimeout(() => {
-      modal__double.style.display = "block";
-      modal.style.display = "none";
-      finalJeopardy();
-    }, 1000);
-  }
-
   setTimeout(() => {
     AI2();
+    if (activeQuestions.length === 0) {
+      isDouble = true;
+      isFinal = true;
+
+      modal__title__double = "Final Jeopardy!";
+
+      setTimeout(() => {
+        modal__double.style.display = "block";
+        modal.style.display = "none";
+        finalJeopardy();
+      }, 1000);
+    }
   }, 1000);
 };
 

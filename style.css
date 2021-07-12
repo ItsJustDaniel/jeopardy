@@ -219,6 +219,7 @@ th {
   color: white;
   font-size: 5rem;
   top: 30%;
-  left: 30%;
+  left: 10%;
   transform: translateZ(10px);
+  text-align: center;
 }
