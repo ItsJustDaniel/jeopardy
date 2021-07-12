@@ -35,6 +35,7 @@ let topics = [
 ];
 let questionIndex1 = "";
 let questionIndex2 = "";
+let currentQuestionIndex = 0;
 
 async function getApi() {
   // topics = topics.concat(await getCategories());
@@ -64,9 +65,10 @@ changeTopicName();
 
 //when user clicks a question
 questionBtn.forEach(
-  (i) =>
+  (i, index) =>
     (i.onclick = (e) => {
       currentQuestion = e;
+      currentQuestionIndex = index;
       const num = parseInt(
         currentQuestion.target.innerText.replace(/[^0-9]/, "")
       );
@@ -97,6 +99,7 @@ modal__button__pass.onclick = () => {
   currentQuestion.target.style.visibility = "hidden";
   currentQuestion = "";
   input.value = "";
+  AI1();
 };
 
 //when user submits their answer
@@ -110,6 +113,11 @@ modal__button__submit.onclick = (e) => {
     userScore.innerHTML = parseInt(userScore.innerText) - num;
     modal__answer.innerHTML = questions[questionIndex1][questionIndex2].answer;
   }
+  console.log(currentQuestionIndex);
+  activeQuestions.splice(activeQuestions.indexOf(currentQuestionIndex), 1);
+
+  console.log(activeQuestions);
+  console.log(questionBtn);
   setTimeout(() => {
     currentQuestion.target.style.visibility = "hidden";
     currentQuestion = "";
@@ -122,18 +130,11 @@ modal__button__submit.onclick = (e) => {
   }, 2500);
 };
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    currentQuestion = "";
-  }
-};
-
 //Ai's turn
 const AI1 = () => {
-  console.log(activeQuestions);
-  const randomQuestion = Math.floor(Math.random() * activeQuestions.length - 1);
+  const randomQuestion = Math.floor(
+    Math.random() * (activeQuestions.length + 1)
+  );
   const isWon = Math.floor(Math.random() * 2);
   questionBtn[activeQuestions[randomQuestion]].style.visibility = "hidden";
   const num = parseInt(
@@ -148,7 +149,10 @@ const AI1 = () => {
   } else {
     computer1Score.innerHTML = parseInt(computer1Score.innerText) - num;
   }
-  activeQuestions.splice(activeQuestions[randomQuestion] - 1, 1);
+  activeQuestions.splice(randomQuestion, 1);
+  console.log(activeQuestions);
+  console.log(questionBtn);
+
   setTimeout(() => {
     AI2();
   }, 1000);
@@ -156,7 +160,9 @@ const AI1 = () => {
 
 const AI2 = () => {
   console.log(activeQuestions);
-  const randomQuestion = Math.floor(Math.random() * activeQuestions.length);
+  const randomQuestion = Math.floor(
+    Math.random() * (activeQuestions.length + 1)
+  );
   const isWon = Math.floor(Math.random() * 2);
   questionBtn[activeQuestions[randomQuestion]].style.visibility = "hidden";
   const num = parseInt(
@@ -171,5 +177,7 @@ const AI2 = () => {
     computer2Score.innerHTML = parseInt(computer2Score.innerText) - num;
   }
 
-  activeQuestions.splice(activeQuestions[randomQuestion] - 1, 1);
+  activeQuestions.splice(randomQuestion, 1);
+  console.log(activeQuestions);
+  console.log(questionBtn);
 };
