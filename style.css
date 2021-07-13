@@ -184,8 +184,8 @@ th {
   margin-top: 10%;
   padding: 20px;
   border: 0.1rem solid #888;
-  width: 600px;
-  height: 400px;
+  width: 650px;
+  height: 500px;
   color: #d7c458;
   border-radius: 0.5rem;
 }
@@ -245,6 +245,5 @@ th {
 }
 
 .question__desc {
-  max-height: 100px;
   margin: 0.8rem;
 }
