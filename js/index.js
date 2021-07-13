@@ -21,16 +21,12 @@ let userScore = document.getElementById("jeopardy__userScore");
 let computer1Score = document.getElementById("jeopardy__compScore1");
 let computer2Score = document.getElementById("jeopardy__compScore2");
 
-console.log(questionBtn);
-
 //active questions
 let activeQuestions = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
   22, 23, 24,
 ];
 
-console.log(questions);
-console.log(getJeopardyApi[0]);
 //how many questions there are still active
 let totalQuestions = 25;
 let currentQuestion = "";
@@ -46,16 +42,7 @@ let isFinal = false;
 // picks a random question to be a daily double
 const RandomDaily = Math.floor(Math.random() * 26);
 questionBtn[RandomDaily].dataset.daily = true;
-
-async function getApi() {
-  // topics = topics.concat(await getCategories());
-  // changeTopicName();
-  console.log(questions);
-}
-getApi();
-
-console.log(RandomDaily);
-
+console.log(`Daily question is ${RandomDaily}\nnote: is using array index`);
 //when user clicks a question
 questionBtn.forEach(
   (i, index) =>
@@ -71,15 +58,17 @@ questionBtn.forEach(
         questions[e.target.dataset.topic - 1][
           parseInt(currentQuestion.target.innerText[1]) - 1
         ].question;
+      console.log(
+        questions[e.target.dataset.topic - 1][
+          parseInt(currentQuestion.target.innerText[1]) - 1
+        ].answer
+      );
       questionIndex1 = e.target.dataset.topic - 1;
       questionIndex2 = parseInt(currentQuestion.target.innerText[1]) - 1;
       question__desc.innerHTML = `${category} - ${e.target.innerText}`;
 
       modal.style.display = "block";
-      console.log(e.target.dataset.daily);
       if (e.target.dataset.daily) {
-        console.log("daily is true");
-        modal__double.style.display = "block";
         modal.style.display = "none";
         return;
       }
@@ -110,10 +99,6 @@ modal__button__pass.onclick = () => {
   }, 500);
 };
 
-if (true && false) {
-  console.log("s");
-}
-
 //when user submits their answer
 modal__button__submit.onclick = (e) => {
   let num;
@@ -121,17 +106,12 @@ modal__button__submit.onclick = (e) => {
     if (isDouble) {
       if (isNaN(parseInt(modal__input__double.value))) {
         num = 0;
-        console.log(num);
       } else {
         num = parseInt(modal__input__double.value);
       }
-      console.log(num);
       modal__input__double.value = "";
       isDouble = false;
     }
-    console.log(parseInt(userScore.innerText));
-    console.log(num);
-    console.log(parseInt(userScore.innerText) + num);
 
     if (finalQuestion.answer === input.value) {
       userScore.innerHTML = parseInt(userScore.innerText) + num;
@@ -160,12 +140,9 @@ modal__button__submit.onclick = (e) => {
     return;
   }
 
-  console.log(isFinal);
   num = parseInt(currentQuestion.target.innerText.replace(/[^0-9]/, ""));
-  console.log(num);
   if (isDouble) {
     num = parseInt(modal__input__double.value);
-    console.log(num);
     modal__input__double.value = "";
     isDouble = false;
   }
@@ -177,13 +154,8 @@ modal__button__submit.onclick = (e) => {
     userScore.innerHTML = parseInt(userScore.innerText) - num;
     modal__answer.innerHTML = `Wrong! - the answer was "${questions[questionIndex1][questionIndex2].answer}"`;
   }
-  console.log(currentQuestionIndex);
   activeQuestions.splice(activeQuestions.indexOf(currentQuestionIndex), 1);
 
-  console.log(activeQuestions);
-  console.log(questionBtn);
-
-  console.log(activeQuestions.length);
   //final jeopardy
   if (activeQuestions.length === 0) {
     isDouble = true;
@@ -213,7 +185,6 @@ modal__button__submit.onclick = (e) => {
 };
 
 bet__double.onclick = () => {
-  console.log(parseInt(modal__input__double.value));
   if (
     parseInt(modal__input__double.value) > parseInt(userScore.innerText) ||
     isNaN(parseInt(modal__input__double.value))
@@ -239,7 +210,6 @@ bet__pass.onclick = () => {
 const AI1 = () => {
   const randomQuestion = Math.floor(Math.random() * activeQuestions.length);
   const isWon = Math.floor(Math.random() * 2);
-  console.log(questionBtn[activeQuestions[randomQuestion]]);
   questionBtn[activeQuestions[randomQuestion]].style.visibility = "hidden";
   const num = parseInt(
     questionBtn[activeQuestions[randomQuestion]].innerHTML.replace(
@@ -255,7 +225,6 @@ const AI1 = () => {
   }
   activeQuestions.splice(randomQuestion, 1);
 
-  console.log(activeQuestions);
   setTimeout(() => {
     if (activeQuestions.length >= 1) {
       AI2();
@@ -276,17 +245,14 @@ const AI1 = () => {
 };
 
 const AI2 = () => {
-  console.log(activeQuestions);
   const randomQuestion = Math.floor(Math.random() * activeQuestions.length);
   const isWon = Math.floor(Math.random() * 2);
-  console.log(questionBtn[activeQuestions[randomQuestion]]);
   questionBtn[activeQuestions[randomQuestion]].style.visibility = "hidden";
   const num = parseInt(
     questionBtn[activeQuestions[randomQuestion]].innerHTML
       .replace(/[^0-9]/g, "")
       .trim()
   );
-  console.log(num);
   if (isWon === 1) {
     computer2Score.innerHTML = parseInt(computer2Score.innerText) + num;
   } else {
@@ -295,7 +261,6 @@ const AI2 = () => {
 
   activeQuestions.splice(randomQuestion, 1);
 
-  console.log(activeQuestions);
   if (activeQuestions.length === 0) {
     setTimeout(() => {
       isDouble = true;

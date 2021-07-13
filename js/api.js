@@ -7,7 +7,6 @@ let questions = [];
 let finalQuestion = "";
 
 function changeTopicName() {
-  console.log(topicName);
   for (let i = 0; i < topicName.length; i++) {
     topicName[i].innerHTML = topics[i];
   }
@@ -22,7 +21,6 @@ const findFinalQuestion = () => {
         questionsList[i][e].value > highestValue
       ) {
         highestValue = questionsList[i][e].value;
-        console.log(highestValue);
         finalQuestion = questionsList[i][e];
       }
     }
@@ -43,17 +41,12 @@ const getJeopardyApi = async () => {
       }
     }
     posQuestions.sort((a, b) => (a.value - b.value ? 1 : -1));
-    console.log(posQuestions);
     questions.push(posQuestions.slice(0, 5));
-    console.log(questions);
   }
   questions = data;
   changeTopicName();
   findFinalQuestion();
-  console.log(questionsList);
-  console.log(finalQuestion);
+
   return getClues;
 };
 getJeopardyApi();
-
-console.log(topics);
