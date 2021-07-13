@@ -36,11 +36,11 @@ console.log(questions);
 let totalQuestions = 25;
 let currentQuestion = "";
 let topics = [
-  "prehistoric times",
-  "acting families",
-  "world city walk",
-  "scuba dooby doo",
-  "historic americans",
+  "Prehistoric Times",
+  "Acting Families",
+  "World City Walk",
+  "Scuba Dooby Doo",
+  "Historic Americans",
 ];
 let questionIndex1 = "";
 let questionIndex2 = "";

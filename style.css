@@ -34,7 +34,7 @@ body {
   border-radius: 0.6rem;
   justify-content: space-between;
   box-shadow: 0rem 0.2rem 1rem 0 #303030da, 0rem -0.2rem 0.5rem 0 #303030da;
-  /* border: 0.1rem solid #d7c458; */
+  border: 0.1rem solid #d7c458;
   position: relative;
   /* z-index: 3; */
 }
@@ -64,7 +64,7 @@ table {
 
 td,
 th {
-  border: 3px solid black;
+  border: 0.1rem solid #d7c458;
   padding: 0.5rem;
   text-align: left;
   font-size: 1rem;
@@ -81,6 +81,7 @@ th {
   font-family: inherit;
   font-size: 2rem;
   cursor: pointer;
+  /* border: 0.1rem  */
 }
 
 .jeopardy__title {
@@ -112,6 +113,7 @@ th {
 
 .jeopardy__board {
   margin-bottom: 3rem;
+  border-radius: 0.5rem;
 }
 
 .footer {
@@ -139,7 +141,13 @@ th {
 .modal__Header {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
+  text-decoration: underline;
+  font-size: 1.5rem;
+}
+
+#modal__question{
+  text-align: center;
 }
 
 .modal__Body {
@@ -176,28 +184,41 @@ th {
   margin: auto;
   margin-top: 10%;
   padding: 20px;
-  border: 1px solid #888;
+  border: 0.1rem solid #888;
   width: 600px;
   height: 400px;
   color: #d7c458;
+  border-radius: 0.5rem;
 }
 
 .modal__input {
   padding: 0.75rem;
   margin: 0.75rem;
-  border-radius: 25px;
+  border-radius: 0.8rem;
   outline: none;
+  border: 0.15rem solid #d7c458;
+  font-family: inherit;
+  color: #d7c458;
+  background: #1c1a2b;
 }
 
 .modal__button {
   margin: 0.75rem;
-  padding: 0.75rem;
+  padding: 0.5rem;
   background-color: #1c1a2b;
   color: #d7c458;
-  border: none;
+  border: 0.05rem solid #d7c458;
+  width: 7vw;
   outline: none;
   font-size: 1rem;
   cursor: pointer;
+  font-family: inherit;
+  border-radius: 0.5rem;
+  transition-property: all;
+  transition-duration: 0.4s;
+}
+.modal__button:hover{
+  transform: scale(1.06);
 }
 
 .close {
