@@ -146,7 +146,7 @@ th {
   font-size: 1.5rem;
 }
 
-#modal__question{
+#modal__question {
   text-align: center;
 }
 
@@ -217,7 +217,7 @@ th {
   transition-property: all;
   transition-duration: 0.4s;
 }
-.modal__button:hover{
+.modal__button:hover {
   transform: scale(1.06);
 }
 

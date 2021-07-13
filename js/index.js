@@ -1,5 +1,4 @@
 // get elements
-const topicName = document.querySelectorAll(".jeopardy__topic");
 const questionBtn = document.querySelectorAll(".jeopardy__button");
 const modal = document.getElementById("myModal");
 const btn = document.getElementById("ansBtn");
@@ -31,17 +30,11 @@ let activeQuestions = [
 ];
 
 console.log(questions);
-
+console.log(getJeopardyApi[0]);
 //how many questions there are still active
 let totalQuestions = 25;
 let currentQuestion = "";
-let topics = [
-  "Prehistoric Times",
-  "Acting Families",
-  "World City Walk",
-  "Scuba Dooby Doo",
-  "Historic Americans",
-];
+
 let questionIndex1 = "";
 let questionIndex2 = "";
 let currentQuestionIndex = 0;
@@ -61,26 +54,7 @@ async function getApi() {
 }
 getApi();
 
-const findCategory = (e) => {
-  let topic = e.dataset.topic;
-  for (let i = 0; i < topics.length; i++) {
-    if (i == topic - 1) {
-      console.log(topics);
-      return topics[i].title;
-    }
-  }
-};
 console.log(RandomDaily);
-
-const changeTopicName = () => {
-  for (let i = 0; i < topicName.length; i++) {
-    console.log(topics);
-    // topicName[i].innerHTML = await findCategory(topicName[i]);
-    topicName[i].innerHTML = topics[i];
-  }
-};
-
-changeTopicName();
 
 //when user clicks a question
 questionBtn.forEach(
