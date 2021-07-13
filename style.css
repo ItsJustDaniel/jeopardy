@@ -243,3 +243,8 @@ th {
   transform: translateZ(10px);
   text-align: center;
 }
+
+.question__desc {
+  max-height: 100px;
+  margin: 0.8rem;
+}
