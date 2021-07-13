@@ -28,7 +28,7 @@ const findFinalQuestion = () => {
 };
 
 const getJeopardyApi = async () => {
-  const getClues = await fetch("http://jeopardy--api.herokuapp.com/");
+  const getClues = await fetch("https://jeopardy--api.herokuapp.com/");
   const data = await getClues.json();
   questionsList = data;
   for (let i = 0; i < data.length; i++) {
