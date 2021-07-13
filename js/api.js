@@ -13,10 +13,26 @@ function changeTopicName() {
   }
 }
 
+const findFinalQuestion = () => {
+  highestValue = 0;
+  for (let i = 0; i < questionsList.length; i++) {
+    for (let e = 0; e < questionsList[i].length; e++) {
+      if (
+        !isNaN(questionsList[i][e].value) &&
+        questionsList[i][e].value > highestValue
+      ) {
+        highestValue = questionsList[i][e].value;
+        console.log(highestValue);
+        finalQuestion = questionsList[i][e];
+      }
+    }
+  }
+};
+
 const getJeopardyApi = async () => {
   const getClues = await fetch("http://jeopardy--api.herokuapp.com/");
   const data = await getClues.json();
-
+  questionsList = data;
   for (let i = 0; i < data.length; i++) {
     topics = topics.concat(data[i][0].category.title);
 
@@ -33,8 +49,9 @@ const getJeopardyApi = async () => {
   }
   questions = data;
   changeTopicName();
-  console.log(topics);
-  console.log(questions);
+  findFinalQuestion();
+  console.log(questionsList);
+  console.log(finalQuestion);
   return getClues;
 };
 getJeopardyApi();
